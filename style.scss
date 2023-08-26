@@ -1,6 +1,8 @@
 *{
   box-sizing: border-box;
-box-shadow: 0 0 0 1px inset red;
+//box-shadow: 0 0 0 1px inset red;
+padding: 0;
+margin: 0;
 }
 
 $font-family-manrope: 'Manrope', sans-serif;
@@ -18,15 +20,16 @@ $Desaturated-blue: hsl(235, 45%, 61%);
 $Pale-Blue: hsl(236, 100%, 87%);
 
 html,body {
-  padding: 0;
-  margin: 0;
-  background: $Dark-blue;
+
+  background: $Very-dark-blue;
 }
 
 #content {
   margin:50px auto;
   width: 90%;
   font-size: 18px;
+  font-family: $font-family-rubik;
+  color: white;
   
   .profil{
     background: $Dark-blue;
@@ -36,15 +39,278 @@ html,body {
     div:first-of-type{
       background: $Violet-social;
       border-radius: 20px;
-      padding: 50px;
+      padding: 25px 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .profil-img{
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        background-image: url('assets/images/image-jeremy.png');
+        background-position: center;
+        background-size: contain;
+        border: 2px solid white;
+      }
+
+      .profil-info{
+        width: 65%;
+        height: 50px;
+
+        span{
+          font-size: 1.2rem;
+          color: rgba(255, 166, 0, 0.587);
+        }
+
+        p{
+          margin-top: 5px;
+          font-size: 2rem;
+          color: white;
+          font-weight:300;
+        }
+
+      }
+    
+    }
+
+    .profil-timeline{
+      padding: 25px 0;
+      ul{
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        color: $Violet-social;
+        li{
+          font-size: 1.6rem;
+          &:hover{
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .active {
+        color: white;
+      }
     }
   }
 
   .grid-time-tracking{
-    background-color: yellow;
-  
+    .item-work{
+      background-color: $Light-red-work;
+    }
+
+    .item-play{
+      background-color: $Soft-blue-play;
+    }
+
+    .item-study{
+      background-color: $Light-red-study;
+    }
+
+    .item-exercise{
+      background-color: $Lime-green-exercise;
+    }
+
+    .item-social{
+      background-color: $Violet-social;
+    }
+
+    .item-self-care{
+      background-color: $Soft-orange-self-care;
+    }
+
   .grid-item{
+    width: 100%;
+    height: 150px;
+    margin: 30px 0;
+    border-radius: 25px;
+
+    .item-img{
+      border-radius: 25px 25px 0 0;
+      width: 100%;
+      height: 35px;
+      background-repeat: no-repeat;
+      background-position: 250px center;
+      background-size: 70px;
+    }
+
+ 
+
+    .item-info{
+      width: 100%;
+      height: 115px;
+      border-radius: 25px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $Dark-blue;
+
+    
+      .item-info-header{
+        width: 100%;
+        height: 40px;
+        display: flex;
+        padding: 5px;
+        h2{
+          width: 50%;
+          font-size: 1.5rem;
+        }
+
+        span{
+          flex: 1;
+          background-image: url('assets/images/icon-ellipsis.svg');
+          width: 50%;
+          background-repeat: no-repeat;
+          background-position: 115px center;
+          
+        }
+      }
+
+      .item-info-time{
+        padding: 5px;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;          
+       
+        p{
+          display: inline-block;
+          flex: 1;
+
+          &:first-of-type{
+            font-size: 2.5rem;
+          }
+
+          &:last-of-type{
+            font-size: 1.1rem;
+            text-align: end;
+            color: $Desaturated-blue;
+          }
+        }
+
+        
+      }
+    }
+
 
   }
   }
+}
+
+@media screen and (min-width:1440px) {
+  body{
+
+    #content{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 70%;
+      height: 40%;
+      display: grid;
+      grid-template-columns: 1fr repeat(3,1fr);
+      grid-template-rows: 1fr 1fr;
+     
+    .profil {
+        grid-column: 1 / 2; /* Profil prend la première colonne */
+        grid-row: 1 / 3; 
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 80%;
+        margin: auto;
+
+        div:first-of-type{
+          height: 70%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 25px;
+          position: relative;
+         .profil-img{
+            background-repeat: no-repeat;
+            position: absolute;
+            top:20px;
+         }
+
+         .profil-info{
+
+          margin-top: 20px;
+          span{
+          }
+          p{
+            font-size:2.5rem;
+          }
+         }
+        }
+
+        .profil-timeline{
+         height: 30%;
+         padding: 0;
+         margin: 0;
+          ul{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items:flex-start;
+            justify-content: space-evenly;
+          li{
+            margin-left: 25px;
+            }
+          }
+        }
+    }
+
+    .grid-time-tracking {
+      grid-column: 2 / -1; /* Prend le reste des colonnes */
+      grid-row: 1 / 3; /* S'étend sur 2 lignes */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      flex: 1;
+      gap:20px;
+
+      .grid-item{
+        height: 100%;
+        margin: 0;
+        .item-img{
+          background-position: 150px center;
+          background-size: 80px;
+        }
+        .item-info{
+          padding: 5px;
+          height: 142px;
+          padding-left: 10px;
+          .item-info-header{
+            h2{
+            }
+            span{
+              background-size: 20px;
+              background-position: 70px center;
+            }
+          }
+
+          .item-info-time{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            p{
+
+            }
+            p{
+
+            }
+          }
+        }
+      }
+    }
+  
+ 
+  }
+}
 }
