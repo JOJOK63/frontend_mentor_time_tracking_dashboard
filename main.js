@@ -107,6 +107,8 @@ var   data_json=[
   }
 ]
 
+createElementHtml(data_json)
+/***
 fetch('./assets/data.json')
   .then(response => {
     if (!response.ok) {
@@ -115,13 +117,13 @@ fetch('./assets/data.json')
     return response.json();
   })
   .then(data => {
-    createElementHtml(data_json)
-   // data_json = data;
+    createElementHtml(data)
+  data_json = data;
   })
   .catch(error => {
     console.error('Une erreur s\'est produite:', error);
   });
-
+ */
 
 
   function createElementHtml(data,data_value){
